@@ -1,0 +1,110 @@
+<!--{% extends 'base.html' %}
+
+{% block content %}
+<script>
+    window.onload = function() {
+        let iconsCount = 80 ; // Nombre d'icônes de vache
+        for (let i = 0; i < iconsCount; i++) {
+            let icon = document.createElement('div');
+            icon.classList.add('cow-icon');
+            icon.style.left = Math.random() * 100 + 'vw';
+            icon.style.top = Math.random() * -50 + 'px';
+            icon.style.animation = `fall 2s linear ${Math.random() * 2}s forwards`;
+            document.body.appendChild(icon);
+
+            setTimeout(() => {
+                icon.remove();
+            }, 4000); // 2 secondes d'animation + 2 secondes avant de retirer
+        }
+    };
+</script>
+
+<section id="welcome">
+    <section>
+        <div>
+        {% include 'navigation.html' %}
+        </div>
+    </section>
+    <section>
+        <div>
+        {% include 'video.html' %}
+        </div>
+    </section>
+
+    <div class="content">
+        
+        <div>
+            <p>
+                
+            </p>
+        </div>
+        <!--<img src="https://see.fontimg.com/api/renderfont4/x3JyK/eyJyIjoiZnMiLCJoIjozMjIsInciOjI0MDAsImZzIjoxMzQsImZnYyI6IiNDOUE0NjAiLCJiZ2MiOiIjMzUzRDRCIiwidCI6MX0/V2VsY29tZSB0byBvdXIgd2VkZGluZw/sellena-brush.png" alt="Cursive fonts" class="fancytext"></a>
+        <h1> Mamma Mia ! ... they are getting married</h1>
+        <div style="padding: 20px;">
+            <p style="text-align: center; letter-spacing: 0em;">
+                Nous vous embarquons sur les terres de Caroline, proche de la ville rose 
+                <b> le 05 juillet 2025 </b>
+                <br>pour célébrer à nos côtés cette journée placée sous le signe de L'Amore ! <br>
+                Êtes-vous pret ? <br>
+            </p>
+            
+            {% include 'timer.html' %}
+
+            <p style="font-weight: bolder; letter-spacing: 0em;">
+                Further information to follow. Check back soon!
+            </p>
+            <a href="/ui/registration">Wedding Registration Here</a>
+        </div>
+
+        <hr>
+
+        <div>
+            <h1 style="padding-bottom: 20px; padding-top: 20px;">- Agenda des festivités-</h1>
+            <p style="letter-spacing: 0; padding-bottom: 20px;">On sait bien que vous êtes déjà tous excités, mais les lieux de réception et de cérémonie sont encore tenus secrets.                     
+                Soyez rassurés nous vous communiquerons tous les informations nécessaires sur ce site cet automne. </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <div>
+            <h1 style="padding-bottom: 20px; padding-top: 20px;">- Quelques infos ? -</h1>
+            <p> Comment se rendre sur place?    </p>
+            <ul>  
+                <li> Les festivités auront lieu à environ 45 min de Toulouse, et la ville "rose"                     
+                    est accessibile par avion (Toulouse Blagnac) ou bien par train (Gara Toulouse Matabiau).                         
+                    Vous pouvez toujours essayer la Gondole par la Garonne, mais on vous le déconseille!  </li>
+            </ul>
+            <br>
+        </div>
+        
+        <hr>
+
+        <div class="content-test">
+            <h2 class="text_shadows">hey</h2>
+        </div>
+
+        <h1 style="letter-spacing: 0.2em;">- Our Story -</h1>
+        <br>
+        <p style="letter-spacing:0em;">
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla 
+            <br><br>
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla 
+            <br><br>
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla 
+            <br><br>
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla 
+            <br><br>
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla  
+            <br><br>
+            Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla 
+            <br><br>
+            Caroline & Quentin.
+        </p>
+
+        <hr>
+        <div></div>
+    </div>
+
+</section>
+{% endblock %}-->

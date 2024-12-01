@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+    window.onload = function() {
+        let iconsCount = 30 ; // Nombre d'icônes
+        for (let i = 0; i < iconsCount; i++) {
+            let icon = document.createElement('div');
+            icon.classList.add('cow-icon');
+            icon.style.left = Math.random() * 100 + 'vw';
+            icon.style.top = Math.random() * -50 + 'px';
+            icon.style.animation = `fall 2s linear ${Math.random() * 2}s forwards`;
+            document.body.appendChild(icon);
+
+            setTimeout(() => {
+                icon.remove();
+            }, 4000); // 2 secondes d'animation + 2 secondes avant de retirer
+        }
+    };
+</script>
+
+{% include 'navigation.html' %}
+
+
+
+<section class="home">
+    <div class="annonce">
+        <h1 class="description">Mamma Mia ! ... They are getting married</h1>
+        <div class="wrap">
+            <button class="button-annonce" onclick="openModal()">Bande Annonce</a>
+        </div>
+    </div>
+</section>
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()"></span>
+        <div>
+            <video id="myVideo"  preload="auto" >
+                <source src="../static/video/bonne_video2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+<div class="myH2">
+    <div class="content">        
+        <div style="padding: 20px;">
+            <p style="text-align: center; letter-spacing: 0em" class="myP">
+                Nous vous embarquons sur les terres de Caroline, près de la ville rose, 
+                <b> le 05 juillet 2025, </b>
+                pour célébrer à nos côtés cette journée placée sous le signe de L'Amore ! <br>
+                Êtes-vous prêt ? <br>
+            </p>
+            
+            {% include 'timer.html' %}
+
+            <div class="wrap">
+                <button class="button-annonce" id="redirectButton">Enregistrement</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+            <h1 style="padding-bottom: 20px; padding-top: 20px;" class="myH1">- Agenda des festivités-</h1>
+            <p style="letter-spacing: 0; padding-bottom: 20px;" class="myP">Nous comprenons que vous soyez déjà tous excités, mais les lieux de réception et de cérémonie sont encore tenus secrets.                     
+                Soyez rassurés, nous vous communiquerons toutes les informations nécessaires sur ce site, cet automne. </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <div>
+            <h1 style="padding-bottom: 20px; padding-top: 20px;" class="myH1">- Quelques infos ? -</h1>
+
+            <div class="accordion accordion-flush" id="accordionFlush">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button id="a1" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Comment se rendre sur place ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">
+                            <p style="letter-spacing: 0" class="myP">Les festivités auront lieu à environ 45 min de Toulouse. La ville "rose" est accessible par avion (Toulouse/Blagnac) ou bien par train (Gare Toulouse Matabiau). Vous pouvez toujours essayer la Gondole par la Garonne, mais on vous le déconseille! </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button id="a3" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Où réserver sa chambre d'hôtel ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">
+                            <p style="letter-spacing: 0" class="myP">Pourquoi as-tu besoin d'un hôtel ? on fera la fête jusqu'au petit matin ! Patience... les informations vous seront bientôt divulguées.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button id="a4"class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                         Un dress code particulier ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">
+                            <p style="letter-spacing: 0" class="myP">Tu es trop pressé, on revient vite!</p>
+                        </div>
+                    </div>
+                </div>
+                <!--ici -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                        <button id="a5"class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                          Contacts ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">
+                            <p style="letter-spacing: 0" class="myP">Si tu as des questions n'hésite pas à nous joindre!</p>
+                            <p style="letter-spacing: 0" class="myP"><b>Caroline</b>: 06 37 86 94 97 ou carolinee.rouzaud@gmail.com</p>  
+                            <p style="letter-spacing: 0" class="myP"><b>Quentin</b>: 06 45 87 41 24 ou quentin.maillebuau@kedgebs.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                        <button id="a6" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                         Les activités dans la région ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">
+                            <p  style="letter-spacing: 0" class="myP">La Travel guide attitrée de l'évènement : "Fabienne" (maman de Caroline), vous prépare un petit guide des meilleures activités de la région.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        
+        <hr>
+
+        <h1 class="myH1">- Découvrez-les ?  -</h1>
+        <br>
+        <!-- ICI -->
+        <p style="text-align: center; letter-spacing: 0em; margin-bottom: 1%;" class="myP">
+            À quelques semaines de la première du film <b>« Noce des petits Q »</b>, Caroline & Quentin m’ont accordé une interview et reviennent sur leur histoire.
+            Assise au rooftop de l’Hôtel Parisien Brach, je bois mon café en les attendant. Après de nombreuses tentatives, j’ai enfin réussi à coordonner leurs agendas.
+            Ils ont plus de 30 min de retard. Je déguste mon café avec une vue imprenable sur Paris. 
+        </p>
+        <div class="chat-container">
+            <div class="chat">
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u> Bonjour Caroline, Bonjour Quentin. Comment allez-vous ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"> <u>Caroline (arrive en courant):</u>Excusez-nous pour le retard!</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"> <u>Quentin (arrive en marchant, sourire aux lèvres) :</u>Hey ! ça va ?</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>Pas de problèmes, j’ai eu le temps de commander un café en profitant de ce cadre authentique.</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Quentin :</u>Parce que le cadre c’est important, vous avez raison !</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>On m’avait prévenu que vous seriez peut-être en retard ! (Rires)</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>Euh.. en retard ? Vous savez nous sommes des gens du Sud, nous prenons le temps. En Espagne au lieu de dire « Nous sommes en retard », on dit plutôt : « J’arrive ! », nous on l’applique à la lettre au quotidien 😉</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>Quelle a été la première chose à laquelle vous avez pensé quand vous vous êtes rencontrés ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Quentin :</u>Ecoute, la première fois que j’ai vu Caro c’était à la rentrée de l’Ecole de Commerce de Reims en 2015. Elle s’est assise juste à côté de moi, moi pas trop timide j’ai vite engagé la discussion, je l’ai trouvée cool. Le jour suivant je lui proposais de venir passer un week-end ensemble avec mes copains à Paris. Sans se poser de question elle a directement accepté !</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>Alors moi, je me suis dit quelque chose comme « Il n’y a personne à côté de lui je vais m’asseoir là. Mais pourquoi a-t-il mis un Polo vert fluo ce mec ??? »</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>Racontez-nous un de vos meilleurs souvenirs ensemble ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>Oulala des souvenirs très cool on en a pas mal... le premier qui me vient là c’est pour le Noël 2017. Nous n’étions pas encore « officiellement » ensemble, il vivait alors en Suisse. Quand je lui ai dit que je passais Noël toute seule à New York, il a contacté ma mère (et avec un peu de son aide) il est venu me faire la surprise et passer Noël avec moi. C’était vraiment trop trop bien !</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Quentin :</u>Attends, j’en ai également un à NY mais en été cette fois. Je voulais faire comme Will Smith dans Hitch Expert en Séduction et faire un tour de jet ski sur l’Hudson River. Tout se passait bien, jusqu’à ce que je donne les commandes à Caro et que je finisse à l’eau sans qu’elle ne s’en rende compte ! Voilà.. 5 minutes à nager dans les eaux turquoises de l’Hudson !</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>Quel est le talent caché de Quentin ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>On ne dira pas la danse, clairement. Hm.. dénicher les plus beaux lieux quand on voyage ET les photos pose mannequin n’importe où n’importe quand. Ah oui et l’Espagnol, demandez-lui qu’il vous parle en espagnol et vous tomberez sous le charme !</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>En parlant de beaux lieux, quel est votre endroit préféré pour les vacances d’été ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Quentin :</u>Autour de la Méditerranée .. sudiste quoi qu’il en coûte ! Ma madeleine de Proust à moi ce sont les parties de pétanques sous les eucalyptus à Porquerolles.</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>L’Espagne, Sagunto & l’Italie. La dolce vita dans tous les cas !</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>Quel est votre plus grand rêve ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Quentin :</u>Alors moi tu sais, j’en ai plein et je ne saurais pas choisir, je veux tous les accomplir : Avoir une maison à Cassis face au Cap Canaille, reprendre un hôtel authentique et confortable (Fabienne t’es où ?), faire un road trip 4x4 en Amérique Latine, faire l’ascension du Mont Blanc, parler espagnol et pouvoir enfin danser la bachata avec Caro..etc (Rires)</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>Ok bombón je veux bien que tu les fasses tous ! Moi un de mes rêves serait de faire un voyage photo en Inde. Capter toutes les couleurs, visages, paysages, traditions et odeurs de ce pays et les retranscrire au travers de photos.</p>
+                </div>
+                <div class="message interviewer">
+                    <p class="myP2"><u>Interviewer :</u>L’interview touche à sa fin, mais j’ai une dernière petite question. Qui est vraiment le plus en retard ?</p>
+                </div>
+                <div class="message interviewee">
+                    <p class="myP2"><u>Caroline :</u>Quentin !!!</p>
+                </div>
+            </div>
+        </div>
+         <!-- ICI -->
+        <hr>
+    </div>
+</div>
+
+
+<!-- Jquery needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../static/test.js"></script>
+
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+<script>
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
+    });
+</script>
+
+<script>
+    var video = document.getElementById('myVideo');
+    video.volume = 0.5; // Set volume to 50%
+
+    document.addEventListener("DOMContentLoaded", function() {
+        video.load();  // Starts preloading the video
+    }); 
+
+    function openModal() {
+        document.getElementById('videoModal').style.display = 'block';
+        video.play();
+    }
+
+    function closeModal() {
+        document.getElementById('videoModal').style.display = 'none';
+        video.pause();
+    }
+
+    // Close the modal if the user clicks outside of the modal content
+    window.onclick = function(event) {
+        var modal = document.getElementById('videoModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    document.getElementById("redirectButton").addEventListener("click", function() {
+            window.location.href = "registration";
+        });
+</script>
+{% endblock %}
